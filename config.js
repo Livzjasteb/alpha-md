@@ -3,15 +3,15 @@ const { existsSync } = require("fs");
 const { Sequelize } = require("sequelize");
 if (existsSync('config.env')) require('dotenv').config({ path: './.env' })
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
-const DB_URL = process.env.DATABASE_URL || "";
+const DB_URL = process.env.DATABASE_URL || "mongodb+srv://rxa76297:<password>@cluster0.4nroyrr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const keysInrl = ['hjS2WBZ', 'QbfLgXT', 'dOd5DTh', 'free50_inrl', '5UYcKW6'];
 
 module.exports = {
   RKEY : keysInrl[Math.floor(keysInrl.length * Math.random())],
-  ANTI_DELETE: process.env.ANTI_DELETE || 'gc', // can use pm, or jid '2348114860536@s.whatsapp.net'
+  ANTI_DELETE: process.env.ANTI_DELETE || 'gc', // can use pm, or jid '6283176793414@s.whatsapp.net'
   SESSION_ID: process.env.SESSION_ID || "", //your session id you got from scan required to run bot
   HEROKU: {
-    API_KEY: process.env.HEROKU_API_KEY,
+    API_KEY: process.env.HEROKU_API_KEY,"test_4Kjmur5En7pcZxQ6xlNbq2ugjdird01aEt2y6tly"
     APP_NAME: process.env.HEROKU_APP_NAME,
   },
   PORT: process.env.PORT || 3067,
@@ -48,7 +48,7 @@ module.exports = {
   OPEN_AI: process.env.OPEN_AI,
   ELEVENLABS: process.env.ELEVENLABS,
   ALPHA_KEY: process.env.ALPHA_KEY || "",
-  DATABASE: DB_URL
+  DATABASE: DB_URL "test_4Kjmur5En7pcZxQ6xlNbq2ugjdird01aEt2y6tly"
     ? new Sequelize(DB_URL, {
         dialect: "postgres",
         ssl: true,
